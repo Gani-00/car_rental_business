@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SwiftRide — Car Rental SPA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="logo">SwiftRide</h1>
+      <nav class="navlinks">
+        <a href="#fleet">Fleet</a>
+        <a href="#how">How it works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <h2>Rent a car in minutes</h2>
+        <p class="lead">Choose from economy to luxury — simple booking, flexible durations, transparent pricing.</p>
+
+        <div class="search-box">
+          <select id="filterType">
+            <option value="">All types</option>
+            <option value="economy">Economy</option>
+            <option value="suv">SUV</option>
+            <option value="luxury">Luxury</option>
+          </select>
+
+          <select id="filterSeats">
+            <option value="">Any seats</option>
+            <option value="2">2 seats</option>
+            <option value="4">4 seats</option>
+            <option value="5">5 seats</option>
+            <option value="7">7 seats</option>
+          </select>
+
+          <button id="filterBtn" class="btn">Filter</button>
+          <button id="resetBtn" class="btn secondary">Reset</button>
+        </div>
+      </div>
+
+      <div class="hero-right card">
+        <h3>Quick Booking</h3>
+        <form id="quickForm">
+          <label>Pick-up Date
+            <input type="date" id="pickup" required />
+          </label>
+          <label>Drop-off Date
+            <input type="date" id="dropoff" required />
+          </label>
+          <label>Car
+            <select id="quickCar"></select>
+          </label>
+          <button class="btn" type="submit">Book Now</button>
+        </form>
+        <div id="bookingStatus" class="muted"></div>
+      </div>
+    </section>
+
+    <section id="fleet" class="section">
+      <h3>Our Fleet</h3>
+      <div id="carsGrid" class="grid"></div>
+    </section>
+
+    <section id="how" class="section">
+      <h3>How it works</h3>
+      <ol>
+        <li>Filter and choose a car from the fleet.</li>
+        <li>Use the quick booking form or open a car’s details and click Book.</li>
+        <li>We store your booking in localStorage (demo). For production, replace with server API.</li>
+      </ol>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:ganeshnadivinti77@gmail.com">ganeshnadivinti77@gmail.com</a></p>
+      <p>Phone: +91 99083 53634</p>
+      <p>GitHub: <a href="https://github.com/Gani-00" target="_blank">Gani-00</a></p>
+    </section>
+  </main>
+
+  <!-- Booking Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button id="closeModal" class="close">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">© 2025 SwiftRide — Car Rental Demo</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
